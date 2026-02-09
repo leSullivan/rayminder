@@ -1,0 +1,69 @@
+{
+  "name": "rayminder",
+  "version": "1.0.0",
+  "description": "Habit and task interval tracker with overdue reminders for Raycast",
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix"
+  },
+  "dependencies": {
+    "@raycast/api": "^1.95.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.79",
+    "typescript": "^5.8.2"
+  },
+  "raycast": {
+    "schemaVersion": 1,
+    "title": "Rayminder",
+    "description": "Track habits/tasks with interval reminders, postpone actions, timers, and a daily score.",
+    "icon": "assets/rayminder-icon.svg",
+    "author": "jjaenckel",
+    "license": "MIT",
+    "preferences": [
+      {
+        "name": "defaultPostponeMinutes",
+        "type": "textfield",
+        "required": true,
+        "title": "Default Postpone Minutes",
+        "description": "Minutes used by the quick postpone action",
+        "default": "15"
+      },
+      {
+        "name": "reminderThrottleMinutes",
+        "type": "textfield",
+        "required": true,
+        "title": "Reminder Throttle Minutes",
+        "description": "Minimum minutes between repeated overdue popups per habit",
+        "default": "5"
+      }
+    ],
+    "commands": [
+      {
+        "name": "dashboard",
+        "title": "Habit Dashboard",
+        "subtitle": "Manage habits, timers, and score",
+        "description": "See due habits, complete or postpone, and track daily performance",
+        "mode": "view"
+      },
+      {
+        "name": "quick-add",
+        "title": "Add Habit or Task",
+        "subtitle": "Create a tracked item quickly",
+        "description": "Create a new habit/task with interval, repetitions, and optional duration target",
+        "mode": "view"
+      },
+      {
+        "name": "background-reminders",
+        "title": "Background Habit Reminders",
+        "subtitle": "Runs in the background",
+        "description": "Shows overdue popups with fulfill/postpone actions",
+        "mode": "no-view",
+        "interval": "1m"
+      }
+    ]
+  }
+}
