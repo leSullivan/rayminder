@@ -246,7 +246,7 @@ export default function DashboardCommand() {
       "",
       `- Type: **${habit.type}**`,
       `- Due: **${formatRelativeDue(habit.dueAt, now)}**`,
-      `- Interval: **every ${habit.intervalMinutes}m**`,
+      habit.type === "task" ? "- Schedule: **one-time task**" : `- Interval: **every ${habit.intervalMinutes}m**`,
       `- Today repetitions: **${stats.count}/${habit.targetRepetitionsPerDay}**`,
       `- Today tracked time: **${formatDuration(trackedDuration)}**`,
       `- Duration target progress: **${durationProgress}**`,

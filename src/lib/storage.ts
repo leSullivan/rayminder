@@ -161,12 +161,20 @@ export async function completeHabit(
 
   completions.push(completion);
 
-  habits[index] = {
-    ...habit,
-    lastCompletedAt: completion.completedAt,
-    lastReminderAt: undefined,
-    dueAt: new Date(now.getTime() + habit.intervalMinutes * 60_000).toISOString(),
-  };
+  const isTask = habit.type === "task";
+  habits[index] = isTask
+    ? {
+        ...habit,
+        archived: true,
+        lastCompletedAt: completion.completedAt,
+        lastReminderAt: undefined,
+      }
+    : {
+        ...habit,
+        lastCompletedAt: completion.completedAt,
+        lastReminderAt: undefined,
+        dueAt: new Date(now.getTime() + habit.intervalMinutes * 60_000).toISOString(),
+      };
 
   const remainingSessions = sessions.filter((session) => session.habitId !== habitId);
 

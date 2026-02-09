@@ -87,7 +87,7 @@ export function HabitForm({ habit, onSaved }: HabitFormProps) {
       }
     >
       <Form.Description
-        text="Define how often this item should occur. Rayminder will flag it as overdue once the interval expires."
+        text="Habits recur after completion. Tasks are one-time and auto-archive when completed. Interval sets the next due time from now."
       />
       <Form.TextField id="name" title="Name" placeholder="Drink water" defaultValue={habit?.name} />
       <Form.Dropdown id="type" title="Type" defaultValue={habit?.type ?? "habit"}>

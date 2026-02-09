@@ -4,7 +4,7 @@ Rayminder is a habit/task tracker for Raycast with interval-based overdue remind
 
 ## Features
 
-- Add habits or tasks with a recurrence interval in minutes.
+- Add habits (recurring) or tasks (one-time) with an interval in minutes.
 - Mark items complete or postpone from the dashboard.
 - Background reminders run every minute and pop up when an item is overdue.
 - Optional timer tracking per habit to measure real execution time.
